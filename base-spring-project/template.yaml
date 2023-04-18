@@ -1,0 +1,52 @@
+name: base-spring-project
+description: Cria uma aplicação Java básica com Spring, utilizando maven
+types:
+  - app-template
+inputs:
+  - label: Project name
+    type: text
+    name: project_name
+    default: project-name
+  - label: Artifact Id
+    type: text
+    name: artifact_id
+    required: true
+    global: true
+  - label: Group Id
+    type: text
+    name: group_id
+    default: "com.stackspot"
+  - label: Package Name
+    type: text
+    name: package_name
+    required: true
+    pattern: "[a-z]+"
+  - label: Spring Boot Version
+    type: text
+    name: spring_version
+    default: 2.7.10
+    pattern: "[0-9.]+"
+  - label: Java Version
+    type: text
+    name: java_version
+    condition:
+      variable: spring_version
+      operator: '>='
+      value: '3'
+    items:
+      - '17'
+  - label: Java Version
+    type: text
+    name: java_version
+    condition:
+      variable: spring_version
+      operator: '<'
+      value: '3'
+    items:
+      - '17'
+      - '11'
+      
+global-computed-inputs:
+  "root_package": "{{group_id}}.{{package_name}}"
+  "base_dir": "{{global_computed_inputs.root_package|replace('.','/')}}"
+    
