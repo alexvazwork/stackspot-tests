@@ -1,5 +1,5 @@
 name: base-spring-project
-description: Cria uma aplicação Java básica com Spring, utilizando maven
+description: Creates a new Java Maven application that uses Spring Boot
 types:
   - app-template
 inputs:

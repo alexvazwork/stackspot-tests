@@ -1,5 +1,5 @@
 name: logback-json-plugin
-description: Criar os arquivos e dependências do logback para gerar logs no formato JSON
+description: Create a logback.xml file and adds the dependencies to generate JSON formatted logs
 display-name: logback-json-plugin
 picture: plugin.png
 category: backend # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/plugin/#category

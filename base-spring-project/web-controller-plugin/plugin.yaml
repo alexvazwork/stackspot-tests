@@ -1,5 +1,5 @@
 name: web-controller-plugin
-description: Criar um Controller Web para a aplicação
+description: Creates a new web controller
 display-name: web-controller-plugin
 picture: plugin.png
 category: backend # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/plugin/#category
@@ -15,12 +15,12 @@ technologies: # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/ya
 types:
   - app
 inputs:
-  - label: Nome do domínio do controller
+  - label: Domain Name
     type: text
     name: domain
     required: true
     pattern: "[A-Za-z]+"
-  - label: Path "raiz" do controller
+  - label: Root path for this controller
     type: text
     name: controller_base_path
     required: true
