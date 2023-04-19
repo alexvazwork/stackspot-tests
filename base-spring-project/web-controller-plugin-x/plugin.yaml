@@ -1,0 +1,28 @@
+name: web-controller-plugin
+description: Criar um Controller Web para a aplicação
+display-name: web-controller-plugin
+picture: plugin.png
+category: backend # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/plugin/#category
+compatibility:
+  - java
+  - spring
+about: docs/about.md
+usage: docs/usage.md
+use-case: docs/use-case.md
+implementation: docs/implementation.md
+technologies: # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/yaml/#technologies
+  - "Api"
+types:
+  - app
+inputs:
+  - label: Nome do domínio do controller
+    type: text
+    name: domain
+    required: true
+    pattern: "[A-Za-z]+"
+  - label: Path "raiz" do controller
+    type: text
+    name: controller_base_path
+    required: true
+computed-inputs:
+  web_domain: "{{domain|lower}}"

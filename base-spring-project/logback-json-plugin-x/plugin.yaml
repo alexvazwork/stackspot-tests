@@ -1,0 +1,26 @@
+name: logback-json-plugin
+description: Criar os arquivos e dependências do logback para gerar logs no formato JSON
+display-name: logback-json-plugin
+picture: plugin.png
+category: backend # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/plugin/#category
+compatibility:
+  - java
+  - spring
+about: docs/about.md
+usage: docs/usage.md
+use-case: docs/use-case.md
+implementation: docs/implementation.md
+technologies: # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/yaml/#technologies
+  - "Api"
+types:
+  - app
+hooks:
+  - type: edit-xml
+    trigger: after-render
+    path: pom.xml
+    changes:
+      - xpath: .//dependencies
+        append:
+          snippet: snippets/dependencies.txt
+        when:
+          not-exist-snippet: ./dependencies/dependency/groupId[.='ch.qos.logback']/../artifactId[.='logback-classic']
